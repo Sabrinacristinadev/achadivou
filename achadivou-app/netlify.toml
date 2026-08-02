@@ -1,5 +1,1 @@
-[build]
-  command = "npm run db:push && npm run db:seed && npm run build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[build] base = "achadivou-app" publish = ".next" command = "npm run db:push && npm run db:seed && npm run build" [[plugins]] package = "@netlify/plugin-nextjs"
