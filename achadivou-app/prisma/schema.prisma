@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id           String @id @default(cuid())
+  username     String @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model Offer {
+  id            String   @id @default(cuid())
+  title         String
+  link          String
+  image         String   @default("")
+  price         Float
+  originalPrice Float    @default(0)
+  store         String
+  category      String
+  coupon        String   @default("")
+  featured      Boolean  @default(false)
+  active        Boolean  @default(true)
+  clicks        Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
