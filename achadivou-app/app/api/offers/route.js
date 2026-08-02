@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 import { NextResponse } from "next/server";
 const prisma = require("../../../lib/prisma");
 const { getSessionFromRequest } = require("../../../lib/auth");
