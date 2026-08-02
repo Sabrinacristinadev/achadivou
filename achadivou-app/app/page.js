@@ -62,9 +62,7 @@ export default function HomePage() {
             <option>Todas</option>
             {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
           </select>
-          <Link href="/admin" style={{ background: C.red, color: "#fff", border: "none", padding: "9px 16px", borderRadius: 24, fontWeight: 700, fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6 }}>
-            <Lock size={14} /> Entrar
-          </Link>
+         
         </div>
       </header>
 
