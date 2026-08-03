@@ -33,7 +33,7 @@ export default function HomePage() {
       const q = query.toLowerCase();
       list = list.filter((o) => o.title.toLowerCase().includes(q) || o.store.toLowerCase().includes(q));
     }
-    if (tab === "Destaques") list = list.filter((o) => o.featured);
+    if (tab === "Destaques") list = list.filter((o) => o.featured || o.active !== false);
     if (tab === "Recentes") list = [...list].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     if (tab === "Menor Preço") list = [...list].sort((a, b) => a.price - b.price);
     return list;
